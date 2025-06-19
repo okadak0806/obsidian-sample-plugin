@@ -6,3 +6,59 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+/* Cornell Notes Plugin Styles */
+
+.cornell-notes-ribbon-class {
+	color: #4a90e2;
+}
+
+.cornell-notes-ribbon-class:hover {
+	color: #357abd;
+}
+
+/* Cornell Notes Template Styling */
+.cornell-notes-template {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: auto auto;
+	gap: 1rem;
+	padding: 1rem;
+	border: 2px solid #e0e0e0;
+	border-radius: 8px;
+	margin: 1rem 0;
+}
+
+.cornell-notes-main {
+	grid-column: 2;
+	grid-row: 1;
+	border-left: 2px solid #4a90e2;
+	padding-left: 1rem;
+}
+
+.cornell-notes-key-points {
+	grid-column: 1;
+	grid-row: 1;
+	border-right: 2px solid #4a90e2;
+	padding-right: 1rem;
+}
+
+.cornell-notes-summary {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	border-top: 2px solid #4a90e2;
+	padding-top: 1rem;
+	background-color: #f8f9fa;
+	padding: 1rem;
+	border-radius: 4px;
+}
+
+/* Settings Tab Styling */
+.cornell-notes-settings {
+	padding: 1rem;
+}
+
+.cornell-notes-settings h2 {
+	color: #4a90e2;
+	margin-bottom: 1rem;
+}
