@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, TFile } from 'obsidian';
+import { App, Editor, MarkdownView, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
 
 // Remember to rename these classes and interfaces!
 
@@ -85,27 +85,35 @@ export default class CornellNotesPlugin extends Plugin {
 	}
 
 	formatAsCornellNotes(editor: Editor) {
-		const content = editor.getValue();
 		const formattedContent = this.getCornellNotesTemplate();
 		editor.setValue(formattedContent);
 		new Notice('Content formatted as Cornell Notes');
 	}
 
 	getCornellNotesTemplate(): string {
-		return `# Cornell Notes
-
-## 📝 Main Notes
-<!-- メインのノート内容をここに記入 -->
-
-## 🔑 Key Points & Questions
-<!-- 左側: キーポイントや質問をここに記入 -->
-
-## 📋 Summary
-<!-- 下部: サマリーをここに記入 -->
-
----
-*Created with Cornell Notes Plugin*
-`;
+		return `<div class="cornell-notes-template">
+	<div class="cornell-notes-key-points">
+		<h3>🔑 Key Points & Questions</h3>
+		<ul>
+			<li>・講義中の重要なキーワードや質問を書きましょう</li>
+			<li>・疑問点や後で調べたいこともここに</li>
+		</ul>
+	</div>
+	<div class="cornell-notes-main">
+		<h3>📝 Main Notes</h3>
+		<ul>
+			<li>・講義や会議の内容を詳細に記入</li>
+			<li>・具体例や説明、気づいたこともここに</li>
+		</ul>
+	</div>
+	<div class="cornell-notes-summary">
+		<h3>📋 Summary</h3>
+		<ul>
+			<li>・要点やまとめ、気づきを簡潔に記載</li>
+			<li>・次回に活かしたいことやアクションも</li>
+		</ul>
+	</div>
+</div>\n\n---\n*Created with Cornell Notes Plugin*\n`;
 	}
 }
 
